@@ -2,6 +2,7 @@ import Sidebar from "@/app/components/Sidebar";
 import { slugify } from "@/app/utils/slugifyTitle";
 import blogsData from "@/data/blogs";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 import { FaBookmark } from "react-icons/fa";
 
 export function generateStaticParams() {
@@ -14,6 +15,10 @@ export default function BlogDetails({ params }) {
   const { title } = params;
   const blog = blogsData.find((blog) => slugify(blog.title) === title);
 
+  if (!blog) {
+    return notFound();
+  }
+
   return (
     <section className="py-10 border-t border-gray-200">
       <div className="container mx-auto px-4">
@@ -24,12 +29,12 @@ export default function BlogDetails({ params }) {
             <div className="container mx-auto px-4 py-8 max-w-4xl">
               <div className="mb-8">
                 <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                  {blog.title}
+                  {blog?.title}
                 </h1>
 
                 <div className="flex items-center mb-6">
                   <Image
-                    src={blog.author.avatar}
+                    src={blog?.author?.avatar}
                     alt="Sumit Saha"
                     className="h-12 w-12 rounded-full mr-4"
                     width={48}
@@ -38,7 +43,7 @@ export default function BlogDetails({ params }) {
                   <div>
                     <div className="flex items-center">
                       <span className="font-medium mr-2">
-                        {blog.author.name}
+                        {blog?.author?.name}
                       </span>
                       <button className="text-green-600 text-sm font-medium">
                         Follow
@@ -48,7 +53,7 @@ export default function BlogDetails({ params }) {
                       <span>May 14, 2025</span>
                       <span className="mx-1">·</span>
                       <span className="bg-gray-100 px-2 py-1 rounded-full">
-                        {blog.category}
+                        {blog?.category}
                       </span>
                     </div>
                   </div>
@@ -58,7 +63,7 @@ export default function BlogDetails({ params }) {
               {/* <!-- Article Content --> */}
               <div
                 className="article-content"
-                dangerouslySetInnerHTML={{ __html: `${blog.description}` }}
+                dangerouslySetInnerHTML={{ __html: `${blog?.description}` }}
               ></div>
 
               <section className="bg-gray-50 py-12 mt-12">
@@ -69,7 +74,7 @@ export default function BlogDetails({ params }) {
                     <article className="mb-10 pb-10 border-b border-gray-200">
                       <div className="flex items-center mb-4">
                         <Image
-                          src={blog.author.avatar}
+                          src={blog?.author?.avatar}
                           alt="Author"
                           className="h-6 w-6 rounded-full mr-2"
                           width={38}
