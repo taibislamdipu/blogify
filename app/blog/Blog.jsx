@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaBookmark } from "react-icons/fa";
+import { slugify } from "../utils/slugifyTitle";
 
 export default function Blog({ blog }) {
-  const { title, author, description, date, category } = blog;
+  const { author, description, date, category, title } = blog;
+
+  const slugifyTitle = slugify(blog.title);
+
   return (
     <article className="mb-10 pb-10 border-b border-gray-200">
       <div className="flex items-center mb-4">
@@ -17,7 +21,7 @@ export default function Blog({ blog }) {
         <span className="text-sm font-medium">{author.name}</span>
       </div>
       <Link
-        href={`/blog/${title}`}
+        href={`/blog/${slugifyTitle}`}
         className="text-xl font-bold mb-2 hover:underline cursor-pointer"
       >
         {title}
