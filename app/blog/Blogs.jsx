@@ -15,7 +15,7 @@ export default function Blogs() {
 
   return (
     <div className="lg:w-2/3 lg:pr-12">
-      <div className="mb-6 flex justify-between items-center">
+      <div className="mb-6 flex items-center justify-between">
         <h2 className="text-2xl font-bold">Articles</h2>
         <SortBlogs />
       </div>
@@ -25,10 +25,10 @@ export default function Blogs() {
       ))}
 
       {!isAllLoaded && (
-        <div className="text-center mt-6">
+        <div className="mt-6 text-center">
           <button
             onClick={handleLoadMore}
-            className="border border-gray-300 text-gray-700 px-6 py-3 rounded-full hover:bg-gray-50 transition-colors"
+            className="rounded-full border border-gray-300 px-6 py-3 text-gray-700 transition-colors hover:bg-gray-50"
           >
             Load more
           </button>
