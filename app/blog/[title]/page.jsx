@@ -20,39 +20,37 @@ export default function BlogDetails({ params }) {
   }
 
   return (
-    <section className="py-10 border-t border-gray-200">
+    <section className="border-t border-gray-200 py-10">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row">
-          {/* <!-- Articles Feed --> */}
           <div className="lg:w-2/3 lg:pr-12">
-            {/* <!-- Article Header --> */}
-            <div className="container mx-auto px-4 py-8 max-w-4xl">
+            <div className="container mx-auto max-w-4xl px-4 py-8">
               <div className="mb-8">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+                <h1 className="mb-6 text-3xl font-bold md:text-4xl lg:text-5xl">
                   {blog?.title}
                 </h1>
 
-                <div className="flex items-center mb-6">
+                <div className="mb-6 flex items-center">
                   <Image
                     src={blog?.author?.avatar}
                     alt="Sumit Saha"
-                    className="h-12 w-12 rounded-full mr-4"
+                    className="mr-4 h-12 w-12 rounded-full"
                     width={48}
                     height={48}
                   />
                   <div>
                     <div className="flex items-center">
-                      <span className="font-medium mr-2">
+                      <span className="mr-2 font-medium">
                         {blog?.author?.name}
                       </span>
-                      <button className="text-green-600 text-sm font-medium">
+                      <button className="text-sm font-medium text-green-600">
                         Follow
                       </button>
                     </div>
-                    <div className="flex items-center text-gray-500 text-sm mt-1">
+                    <div className="mt-1 flex items-center text-sm text-gray-500">
                       <span>May 14, 2025</span>
                       <span className="mx-1">·</span>
-                      <span className="bg-gray-100 px-2 py-1 rounded-full">
+                      <span className="rounded-full bg-gray-100 px-2 py-1">
                         {blog?.category}
                       </span>
                     </div>
@@ -60,42 +58,41 @@ export default function BlogDetails({ params }) {
                 </div>
               </div>
 
-              {/* <!-- Article Content --> */}
               <div
                 className="article-content"
                 dangerouslySetInnerHTML={{ __html: `${blog?.description}` }}
               ></div>
 
-              <section className="bg-gray-50 py-12 mt-12">
-                <div className="container mx-auto px-4 max-w-4xl">
-                  <h3 className="text-xl font-bold mb-6">Recommended Blogs</h3>
+              <section className="mt-12 bg-gray-50 py-12">
+                <div className="container mx-auto max-w-4xl px-4">
+                  <h3 className="mb-6 text-xl font-bold">Recommended Blogs</h3>
 
                   <div className="grid grid-cols-2 gap-4">
-                    <article className="mb-10 pb-10 border-b border-gray-200">
-                      <div className="flex items-center mb-4">
+                    <article className="mb-10 border-b border-gray-200 pb-10">
+                      <div className="mb-4 flex items-center">
                         <Image
                           src={blog?.author?.avatar}
                           alt="Author"
-                          className="h-6 w-6 rounded-full mr-2"
+                          className="mr-2 h-6 w-6 rounded-full"
                           width={38}
                           height={38}
                         />
                         <span className="text-sm font-medium">Sumit Saha</span>
                       </div>
-                      <h2 className="text-xl font-bold mb-2 hover:underline cursor-pointer">
+                      <h2 className="mb-2 cursor-pointer text-xl font-bold hover:underline">
                         The Ultimate Guide to Tailwind CSS v4: What`&apos;`s New
                         and Improved
                       </h2>
-                      <p className="text-gray-700 mb-4">
+                      <p className="mb-4 text-gray-700">
                         Discover the latest features and improvements in
                         Tailwind CSS v4 and how they can enhance your web
                         development workflow.
                       </p>
-                      <div className="flex justify-between items-center">
-                        <div className="flex items-center text-gray-500 text-sm">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center text-sm text-gray-500">
                           <span>May 14</span>
                           <span className="mx-1">·</span>
-                          <span className="bg-gray-100 px-2 py-1 rounded-full">
+                          <span className="rounded-full bg-gray-100 px-2 py-1">
                             Web Development
                           </span>
                         </div>
