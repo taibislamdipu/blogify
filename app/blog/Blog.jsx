@@ -1,15 +1,18 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FaBookmark } from "react-icons/fa";
 
 export default function Blog({ blog }) {
-  const { title, author, image, description, date, category } = blog;
+  const { title, author, description, date, category } = blog;
   return (
     <article className="mb-10 pb-10 border-b border-gray-200">
       <div className="flex items-center mb-4">
-        <img
-          src="https://learnwithsumit.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Finstructor.de111715.jpg&w=828&q=75"
+        <Image
+          src={author.avatar}
           alt="Author"
           className="h-6 w-6 rounded-full mr-2"
+          width={30}
+          height={30}
         />
         <span className="text-sm font-medium">{author.name}</span>
       </div>

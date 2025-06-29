@@ -1,5 +1,5 @@
 import blogsData from "@/data/blogs";
-import SortBlogs from "../SortBlogs";
+import SortBlogs from "../components/SortBlogs";
 import Blog from "./Blog";
 
 export default function Blogs() {
