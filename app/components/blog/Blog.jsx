@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaBookmark } from "react-icons/fa";
 
 export default function Blog({ blog }) {
@@ -12,12 +13,12 @@ export default function Blog({ blog }) {
         />
         <span className="text-sm font-medium">{author.name}</span>
       </div>
-      <a
-        href="./details.html"
+      <Link
+        href={`/blog/${title}`}
         className="text-xl font-bold mb-2 hover:underline cursor-pointer"
       >
         {title}
-      </a>
+      </Link>
       <p className="text-gray-700 mb-4">
         Discover the latest features and improvements in Tailwind CSS v4 and how
         they can enhance your web development workflow.
