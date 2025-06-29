@@ -23,7 +23,7 @@ export default function Header() {
         </nav>
 
         <button className="md:hidden">
-          <MdOutlineMenu />
+          <MdOutlineMenu size={28} />
         </button>
       </div>
     </header>
