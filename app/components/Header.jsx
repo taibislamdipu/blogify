@@ -9,7 +9,12 @@ export default function Header() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <Link href="/">
-            <Image src={Logo} width={160} height={48} alt="Logo" />
+            <Image
+              src={Logo}
+              alt="Logo"
+              className="h-auto w-40" // or "w-auto h-12"
+              priority
+            />
           </Link>
         </div>
 
