@@ -1,4 +1,4 @@
-const blogs = [
+const blogsData = [
   {
     title: "The Ultimate Guide to Tailwind CSS v4",
     author: {
@@ -349,4 +349,4 @@ const blogs = [
   },
 ];
 
-export default blogs;
+export default blogsData;
