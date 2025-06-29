@@ -6,21 +6,29 @@ import Blog from "./Blog";
 
 export default function Blogs() {
   const [visibleCount, setVisibleCount] = useState(2);
+  const [sortOrder, setSortOrder] = useState("latest");
 
   const handleLoadMore = () => {
-    setVisibleCount((prev) => prev + 2); // Load 2 more each time
+    setVisibleCount((prev) => prev + 2);
   };
 
   const isAllLoaded = visibleCount >= blogsData.length;
+
+  // Sort logic
+  const sortedBlogs = [...blogsData].sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return sortOrder === "latest" ? dateB - dateA : dateA - dateB;
+  });
 
   return (
     <div className="lg:w-2/3 lg:pr-12">
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-2xl font-bold">Articles</h2>
-        <SortBlogs />
+        <SortBlogs sortOrder={sortOrder} setSortOrder={setSortOrder} />
       </div>
 
-      {blogsData.slice(0, visibleCount).map((blog) => (
+      {sortedBlogs.slice(0, visibleCount).map((blog) => (
         <Blog key={blog.title} blog={blog} />
       ))}
 
