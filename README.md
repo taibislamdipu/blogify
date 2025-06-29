@@ -1,37 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📝 Blogify – Server-Side Rendered Blog Platform
 
-## Getting Started
+Blogify is a **practice project** built using **Next.js 14 (App Router)** and **Tailwind CSS**, designed to explore core concepts like server-side rendering, dynamic routing, local data loading, filtering, and sorting — all without any backend or API.
 
-First, run the development server:
+## 📸 Screenshot
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+![Blogify Preview](./public/Blogify-Code-Content-Community--06-30-2025_02_43_AM.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+![Blogify Preview](./public/Blogify-Code-Content-Community--06-30-2025_02_46_AM.png)
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🚀 Features
 
-## Learn More
+- ✅ Blog listing from local `data.json` (no API calls)
+- ✅ Server-side rendering using App Router
+- ✅ Dynamic blog detail pages using blog title as slug
+- ✅ HTML rendering using `dangerouslySetInnerHTML`
+- ✅ Category filter with multi-select toggle
+- ✅ Sort by latest or oldest date
+- ✅ Handles not found pages gracefully
+- ✅ Clean and responsive UI using Tailwind CSS
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 🏠 Home Page
 
-## Deploy on Vercel
+- Lists all blogs from `data.json`
+- Filters blogs by selected categories
+- Sorts blogs by publish date (latest/oldest)
+- Server-side filtered and sorted content based on query parameters
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📄 Blog Details Page
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# blogify
+- Dynamic route: `/blog/{slug}`
+- Parses blog data based on title-to-slug conversion
+- Renders blog content using `dangerouslySetInnerHTML`
+- Shows a "Not Found" message if the blog doesn't exist
+
+---
+
+## 📚 What I Learned
+
+- Using **Next.js 14 App Router** effectively
+- Implementing **server-side rendering** (SSR) with `searchParams`
+- Working with **static local data** (no API usage)
+- Creating **dynamic routes** based on title slugs
+- Using **`dangerouslySetInnerHTML`** to render raw HTML safely
+- Building UI with **Tailwind CSS**
+- Managing **multi-select category filtering** and server-based sorting
+
+---
+
+## 👨‍💻 Developer
+
+Developed by **[Taib Islam Dipu](https://github.com/taibislamdipu)**  
+GitHub: [github.com/taibislamdipu](https://github.com/taibislamdipu)
+
+---
+
+## 🛠️ Tech Stack
+
+- **Next.js 14** (App Router)
+- **Tailwind CSS**
+- **JavaScript (No TypeScript)**
+- **Local JSON Data Source**
