@@ -1,4 +1,4 @@
-import Blogs from "./components/Articles/Blogs";
+import Blogs from "./components/blogs/Blogs";
 import Sidebar from "./components/Sidebar";
 
 export default function Home() {
